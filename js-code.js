@@ -45,7 +45,7 @@
     if(navigator.userAgent.indexOf("Safari") > -1) {
       var a = document.querySelectorAll(".ccm-image img");
 
-      if(a) {
+      if(a.length > 0) {
         for(var i = 0; i < a.length; i++) {
           var img = a[i];
           if(img.src.indexOf("wixstatic") > -1) {
@@ -56,15 +56,24 @@
     }
   })();
 
-  // the plus sign below is to convert the variable from string to a number
+  var head = document.getElementsByTagName("head")[0];
+  
   var card = document.querySelectorAll(".ccm-card");
   var cardStyles = document.querySelectorAll(".ccm-card-styles");
-  for(var i = 0; i < card.length; i++) {
-    var cardNum = +card[i].getAttribute("data-ccmcardnum");
-    cardStyles[i].innerHTML = commonStyles + styles[cardNum - 1];
-  } 
+  if(cardStyles.length > 0) {
+    for(var i = 0; i < card.length; i++) {
+      // the plus sign below is to convert the variable from string to a number
+      var cardNum = +card[i].getAttribute("data-ccmcardnum");
+      cardStyles[i].innerHTML = commonStyles + styles[cardNum - 1];
+    } 
+  } else {
+    var cardNum = +card[0].getAttribute("data-ccmcardnum");
+    var style = document.createElement("style");
+    style.innerHTML = commonStyles + styles[cardNum - 1];
+    head.appendChild(style);
+  }
+  
   //document.querySelector(".ccm-card-script").innerHTML = jsCode;
-  var head = document.getElementsByTagName("head")[0];
   var scripts = document.createElement("script");
   scripts.type = "text/javascript";
   var theImage = document.querySelector(".ccm-image");
