@@ -28,7 +28,15 @@
   (function() {
     var aaa = document.querySelectorAll(".ccm-card button");
 
-    if(aaa) {
+    if(aaa.length > 0) {
+      for(var i = 0; i < aaa.length; i++) {
+        aaa[i].setAttribute("onclick", "ccmpr(this);");
+      }
+    }
+    
+    aaa = document.querySelectorAll(".ccm-printbutton");
+
+    if(aaa.length > 0) {
       for(var i = 0; i < aaa.length; i++) {
         aaa[i].setAttribute("onclick", "ccmpr(this);");
       }
