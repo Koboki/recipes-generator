@@ -38,7 +38,7 @@
 
     if(aaa.length > 0) {
       for(var i = 0; i < aaa.length; i++) {
-        aaa[i].setAttribute("onclick", "ccmpr(this);");
+        //aaa[i].setAttribute("onclick", "ccmpr(this);");
       }
     }
     
