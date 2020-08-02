@@ -46,7 +46,7 @@
     
     if(a) {
       for(var i = 0; i < a.length; i++) {
-        a[i].removeAttribute("href");
+        a[i].setAttribute("href", "https://www.recipesgenerator.com/p/print.html");
       }
     }
     
