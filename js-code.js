@@ -49,7 +49,9 @@
         var isWix = document.querySelector("head").firstElementChild.textContent.indexOf("iframe[class|='instagram']") > -1;
         if(!isWix) {
           a[i].removeAttribute("onclick");
-          a[i].setAttribute("href", "https://www.recipesgenerator.com/p/print.html");
+          if(!a[i].getAttribute("href")) {
+            a[i].setAttribute("href", "https://www.recipesgenerator.com/p/print.html");
+          }
         }
       }
     }
