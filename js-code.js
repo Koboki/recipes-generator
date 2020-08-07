@@ -51,7 +51,7 @@
         if(!isWix) {
           a[i].removeAttribute("onclick");
           //if(!a[i].getAttribute("href")) {
-            a[i].setAttribute("href", "https://www.recipesgenerator.com/p/print.html?url" + window.location.href);
+            a[i].setAttribute("href", "https://www.recipesgenerator.com/p/print.html?url=" + window.location.href);
           //}
         }
         
