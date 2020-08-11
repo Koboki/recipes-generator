@@ -78,7 +78,7 @@
       }
     }
   })();
-  
+  /*
   (function() {
     var s1 = document.createElement("script");
     s1.src = "https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js";
@@ -94,6 +94,7 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
   })();
+  */
   
   var card = document.querySelectorAll(".ccm-card");
   var cardStyles = document.querySelectorAll(".ccm-card-styles");
