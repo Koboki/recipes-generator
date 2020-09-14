@@ -1,13 +1,7 @@
 (function() {
-  console.log("RG43");
+  console.log("RG44");
   
-  if(location.href.indexOf("throughthevinewellness") > -1) {
-    var nn = navigator.userAgent;
-    var div = document.createElement("div");
-    div.className = "ccm-test";
-    div.textContent = nn;
-    document.querySelector(".ccm-card").appendChild(div);
-  }
+  
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -70,8 +64,11 @@
         }
         */
         //if(location.href.indexOf("ketorevolution") > -1) {
+   
+        //if(navigator.userAgent.indexOf("Instagram") === -1) {
           a[i].removeAttribute("href");
           a[i].setAttribute("onclick", "ccmpr(this)");
+        //}
         //}
       }
     }
