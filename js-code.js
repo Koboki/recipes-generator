@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG44");
+  console.log("RG45");
   
   
   
@@ -162,7 +162,7 @@
   
   var hostName = location.hostname;
   var ex = ["www.thehappyflammily.com", "ourlifeintheraw.com", "www.spiritofhealthkc.com", "www.brittneydacosta.com", "www.whisknwhip.com", "www.healthcoverage.me", "plantpassionate.com", "www.jacquitoumbas.com", "fittyfoodlicious.com", "deliciously-free.com", "www.castirongourmetla.com", "www.hautepot.co", "www.brittneydacosta.com", "www.prolongliving.com", "www.tabletocrave.com", "www.riceguysla.com"]
-  if(ex.indexOf(hostName) === -1 && hostName !== "") {
+  /*if(ex.indexOf(hostName) === -1 && hostName !== "") {
     console.log("IF 1");
     var credits = document.querySelector(".ccm-credit");
     if(credits) {
@@ -177,6 +177,6 @@
     }
   } else {
     document.querySelector(".ccm-credit").remove();
-  }
+  }*/
 
 })();
