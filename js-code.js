@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG46");
+  console.log("RG47");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -69,6 +69,7 @@
         } else {
           var hrefValue = a[i].getAttribute("href");
           a[i].setAttribute("href", hrefValue + "&url=" + location.href);
+          a[i].removeAttribute("onclick");
         }
         //}
       }
