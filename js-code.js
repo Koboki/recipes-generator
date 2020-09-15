@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG48");
+  console.log("RG49");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -67,7 +67,7 @@
           a[i].removeAttribute("href");
           a[i].setAttribute("onclick", "ccmpr(this)");
         } else {
-          document.querySelector(".ccm-credit").remove();
+          document.querySelector(".ccm-section-ingredients .ccm-head").textContent = "ingredients";
           var hrefValue = a[i].getAttribute("href");
           a[i].setAttribute("href", hrefValue + "&url=" + location.href);
           a[i].removeAttribute("onclick");
