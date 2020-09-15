@@ -1,7 +1,5 @@
 (function() {
-  console.log("RG45");
-  
-  
+  console.log("RG46");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -65,10 +63,13 @@
         */
         //if(location.href.indexOf("ketorevolution") > -1) {
    
-        //if(navigator.userAgent.indexOf("Instagram") === -1) {
+        if(navigator.userAgent.indexOf("Instagram") === -1) {
           a[i].removeAttribute("href");
           a[i].setAttribute("onclick", "ccmpr(this)");
-        //}
+        } else {
+          var hrefValue = a[i].getAttribute("href");
+          a[i].setAttribute("href", hrefValue + "&url=" + location.href);
+        }
         //}
       }
     }
@@ -145,6 +146,7 @@
   })();
   */
   
+  /*
   var card = document.querySelectorAll(".ccm-card");
   var cardStyles = document.querySelectorAll(".ccm-card-styles");
   if(cardStyles.length > 0) {
@@ -159,10 +161,11 @@
     style.innerHTML = commonStyles + styles[cardNum - 1];
     head.appendChild(style);
   }
+  */
   
   var hostName = location.hostname;
   var ex = ["www.thehappyflammily.com", "ourlifeintheraw.com", "www.spiritofhealthkc.com", "www.brittneydacosta.com", "www.whisknwhip.com", "www.healthcoverage.me", "plantpassionate.com", "www.jacquitoumbas.com", "fittyfoodlicious.com", "deliciously-free.com", "www.castirongourmetla.com", "www.hautepot.co", "www.brittneydacosta.com", "www.prolongliving.com", "www.tabletocrave.com", "www.riceguysla.com"]
-  /*if(ex.indexOf(hostName) === -1 && hostName !== "") {
+  if(ex.indexOf(hostName) === -1 && hostName !== "") {
     console.log("IF 1");
     var credits = document.querySelector(".ccm-credit");
     if(credits) {
@@ -177,6 +180,6 @@
     }
   } else {
     document.querySelector(".ccm-credit").remove();
-  }*/
+  }
 
 })();
