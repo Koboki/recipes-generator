@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG47");
+  console.log("RG48");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -67,9 +67,11 @@
           a[i].removeAttribute("href");
           a[i].setAttribute("onclick", "ccmpr(this)");
         } else {
+          document.querySelector(".ccm-credit").remove();
           var hrefValue = a[i].getAttribute("href");
           a[i].setAttribute("href", hrefValue + "&url=" + location.href);
           a[i].removeAttribute("onclick");
+          a[i].setAttribute("target", "_new");
         }
         //}
       }
