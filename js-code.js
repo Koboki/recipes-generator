@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG49");
+  console.log("RG50");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -64,14 +64,14 @@
         //if(location.href.indexOf("ketorevolution") > -1) {
    
         if(navigator.userAgent.indexOf("Instagram") === -1) {
+          console.log("is instagram");
           a[i].removeAttribute("href");
           a[i].setAttribute("onclick", "ccmpr(this)");
         } else {
-          document.querySelector(".ccm-section-ingredients .ccm-head").textContent = "ingredients";
+          console.log("is NOT instagram");
           var hrefValue = a[i].getAttribute("href");
           a[i].setAttribute("href", hrefValue + "&url=" + location.href);
           a[i].removeAttribute("onclick");
-          a[i].setAttribute("target", "_new");
         }
         //}
       }
