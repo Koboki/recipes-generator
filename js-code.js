@@ -149,7 +149,7 @@
   })();
   */
   
-  /*
+  
   var card = document.querySelectorAll(".ccm-card");
   var cardStyles = document.querySelectorAll(".ccm-card-styles");
   if(cardStyles.length > 0) {
@@ -164,7 +164,7 @@
     style.innerHTML = commonStyles + styles[cardNum - 1];
     head.appendChild(style);
   }
-  */
+  
   
   var hostName = location.hostname;
   var ex = ["www.thehappyflammily.com", "ourlifeintheraw.com", "www.spiritofhealthkc.com", "www.brittneydacosta.com", "www.whisknwhip.com", "www.healthcoverage.me", "plantpassionate.com", "www.jacquitoumbas.com", "fittyfoodlicious.com", "deliciously-free.com", "www.castirongourmetla.com", "www.hautepot.co", "www.brittneydacosta.com", "www.prolongliving.com", "www.tabletocrave.com", "www.riceguysla.com"]
