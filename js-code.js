@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG52");
+  console.log("RG53");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -157,6 +157,11 @@
       var style = document.createElement("style");
       style.innerHTML = commonStyles + styles[cardNum - 1];
       head.appendChild(style);
+    } else {
+     for(var i = 0; i < cardStyles.length; i++) {
+       var s = cardStyles[i].innerHTML;
+       cardStyles[i].innerHTML = s.replace("<![CDATA[", "").replace("]]>", "");
+     }
     }
   })();
   
