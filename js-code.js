@@ -185,7 +185,7 @@
   }
 
   (function (){
-    if(!localStorage.getItem("newVisitor") {
+    if(!localStorage.getItem("newVisitor")) {
       localStorage.setItem("newVisitor", "true");
       var s = document.createElement("script");
       s.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js";
