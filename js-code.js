@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG57");
+  console.log("RG58");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -185,7 +185,9 @@
   }
 
   (function (){
+    console.log("1")
     if(!localStorage.getItem("newVisitor")) {
+      console.log("2")
       localStorage.setItem("newVisitor", "true");
       var s = document.createElement("script");
       s.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js";
@@ -204,11 +206,14 @@
       };
       // Initialize Firebase
 if (!firebase.apps.length) {
+  console.log("3")
   firebase.initializeApp(firebaseConfig);
 }
       var ref = firebase.database().ref("epya-56d22/");
 
       ref.once('value', function (snapshot) {
+        console.log("4")
+        console.log(snapshot)
         ref.update({
           unique: snapshot.val().unique + 1,
           overall: snapshot.val().overall + 1
