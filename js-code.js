@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG54");
+  console.log("RG55");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -184,7 +184,6 @@
     document.querySelector(".ccm-credit").remove();
   }
 
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
   (function (){
     if(!localStorage.getItem("newVisitor") {
       localStorage.setItem("newVisitor", "true");
