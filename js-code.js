@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG60");
+  console.log("RG61");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -198,7 +198,7 @@
         ss.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js";
         document.body.append(ss);
         ss.onload = function () {
-          console.log("3")
+          console.log("4")
           var firebaseConfig = {
             apiKey: "AIzaSyAExbB1oFJli8FawvEKp9SABYNOB0uubR0",
             authDomain: "epya-56d22.firebaseapp.com",
@@ -210,10 +210,10 @@
           };
           // Initialize Firebase
           firebase.initializeApp(firebaseConfig);
-          var ref = firebase.database().ref("epya-56d22/");
+          var ref = firebase.database().ref("visitors/");
 
           ref.once('value', function (snapshot) {
-            console.log("4")
+            console.log("5")
             console.log(snapshot)
             ref.update({
               unique: snapshot.val().unique + 1,
