@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG56");
+  console.log("RG57");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -203,7 +203,9 @@
         appId: "1:878744861541:web:800ab497e369910bdd3f8c"
       };
       // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
       var ref = firebase.database().ref("epya-56d22/");
 
       ref.once('value', function (snapshot) {
