@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG59");
+  console.log("RG60");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -192,33 +192,36 @@
       var s = document.createElement("script");
       s.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js";
       document.body.append(s);
-      s = document.createElement("script");
-      s.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js";
-      document.body.append(s);
-      var firebaseConfig = {
-        apiKey: "AIzaSyAExbB1oFJli8FawvEKp9SABYNOB0uubR0",
-        authDomain: "epya-56d22.firebaseapp.com",
-        databaseURL: "https://epya-56d22.firebaseio.com",
-        projectId: "epya-56d22",
-        storageBucket: "epya-56d22.appspot.com",
-        messagingSenderId: "878744861541",
-        appId: "1:878744861541:web:800ab497e369910bdd3f8c"
-      };
-      // Initialize Firebase
-if (!firebase.apps.length) {
-  console.log("3")
-  firebase.initializeApp(firebaseConfig);
-}
-      var ref = firebase.database().ref("epya-56d22/");
+      s.onload = function () {
+        console.log("3")
+        var ss = document.createElement("script");
+        ss.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js";
+        document.body.append(ss);
+        ss.onload = function () {
+          console.log("3")
+          var firebaseConfig = {
+            apiKey: "AIzaSyAExbB1oFJli8FawvEKp9SABYNOB0uubR0",
+            authDomain: "epya-56d22.firebaseapp.com",
+            databaseURL: "https://epya-56d22.firebaseio.com",
+            projectId: "epya-56d22",
+            storageBucket: "epya-56d22.appspot.com",
+            messagingSenderId: "878744861541",
+            appId: "1:878744861541:web:800ab497e369910bdd3f8c"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          var ref = firebase.database().ref("epya-56d22/");
 
-      ref.once('value', function (snapshot) {
-        console.log("4")
-        console.log(snapshot)
-        ref.update({
-          unique: snapshot.val().unique + 1,
-          overall: snapshot.val().overall + 1
-        });
-      });
+          ref.once('value', function (snapshot) {
+            console.log("4")
+            console.log(snapshot)
+            ref.update({
+              unique: snapshot.val().unique + 1,
+              overall: snapshot.val().overall + 1
+            });
+          });
+        }
+      }
     }
   })();
 
