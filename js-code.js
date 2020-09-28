@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG55");
+  console.log("RG56");
   
   var head = document.getElementsByTagName("head")[0];
   
