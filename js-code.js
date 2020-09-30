@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG62");
+  console.log("RG63");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -200,15 +200,15 @@
         ss.onload = function () {
           console.log("4")
           var firebaseConfig = {
-            apiKey: "AIzaSyAExbB1oFJli8FawvEKp9SABYNOB0uubR0",
-            authDomain: "epya-56d22.firebaseapp.com",
-            databaseURL: "https://epya-56d22.firebaseio.com",
-            projectId: "epya-56d22",
-            storageBucket: "epya-56d22.appspot.com",
-            messagingSenderId: "878744861541",
-            appId: "1:878744861541:web:800ab497e369910bdd3f8c"
+            apiKey: "AIzaSyAYnbsYcYYzuSYLpHS29Jdr_MdMeB1Gk6Q",
+            authDomain: "adwan-cards.firebaseapp.com",
+            databaseURL: "https://adwan-cards.firebaseio.com",
+            projectId: "adwan-cards",
+            storageBucket: "adwan-cards.appspot.com",
+            messagingSenderId: "612048300210",
+            appId: "1:612048300210:web:5da5fab9ec2c16f8c901ab",
+            measurementId: "G-H5ZTLKCDZZ"
           };
-          // Initialize Firebase
           firebase.initializeApp(firebaseConfig);
           var ref = firebase.database().ref("visitors/");
 
