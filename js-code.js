@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG63");
+  console.log("RG64");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -184,45 +184,41 @@
     document.querySelector(".ccm-credit").remove();
   }
 
-  (function (){
-    console.log("1")
-    if(!localStorage.getItem("newVisitor")) {
-      console.log("2")
-      localStorage.setItem("newVisitor", "true");
-      var s = document.createElement("script");
-      s.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js";
-      document.body.append(s);
-      s.onload = function () {
-        console.log("3")
-        var ss = document.createElement("script");
-        ss.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js";
-        document.body.append(ss);
-        ss.onload = function () {
-          console.log("4")
-          var firebaseConfig = {
-            apiKey: "AIzaSyAYnbsYcYYzuSYLpHS29Jdr_MdMeB1Gk6Q",
-            authDomain: "adwan-cards.firebaseapp.com",
-            databaseURL: "https://adwan-cards.firebaseio.com",
-            projectId: "adwan-cards",
-            storageBucket: "adwan-cards.appspot.com",
-            messagingSenderId: "612048300210",
-            appId: "1:612048300210:web:5da5fab9ec2c16f8c901ab",
-            measurementId: "G-H5ZTLKCDZZ"
-          };
-          firebase.initializeApp(firebaseConfig);
-          var ref = firebase.database().ref("visitors/");
+  (function () {
+	var s = document.createElement("script");
+	s.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js";
+	document.body.append(s);
+	s.onload = function () {
+		var ss = document.createElement("script");
+		ss.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js";
+		document.body.append(ss);
+		ss.onload = function () {
+			var firebaseConfig = {
+				apiKey: "AIzaSyAYnbsYcYYzuSYLpHS29Jdr_MdMeB1Gk6Q",
+				authDomain: "adwan-cards.firebaseapp.com",
+				databaseURL: "https://adwan-cards.firebaseio.com",
+				projectId: "adwan-cards",
+				storageBucket: "adwan-cards.appspot.com",
+				messagingSenderId: "612048300210",
+				appId: "1:612048300210:web:5da5fab9ec2c16f8c901ab",
+				measurementId: "G-H5ZTLKCDZZ"
+			};
+			firebase.initializeApp(firebaseConfig);
+			var ref = firebase.database().ref("visitors/");
 
-          ref.once('value', function (snapshot) {
-            console.log("5")
-            console.log(snapshot)
-            ref.update({
-              unique: snapshot.val().unique + 1,
-              overall: snapshot.val().overall + 1
-            });
-          });
-        }
-      }
-    }
-  })();
+			ref.once('value', function (snapshot) {
+				if (!localStorage.getItem("newVisitor")) {
+					localStorage.setItem("newVisitor", "true");
+					ref.update({
+						unique: snapshot.val().unique + 1
+					});					
+				}
+				ref.update({
+					overall: snapshot.val().overall + 1
+				});
+			});
+		}
+	}
+})();
 
 })();
