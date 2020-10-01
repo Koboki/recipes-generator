@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG64");
+  console.log("RG65");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -209,9 +209,13 @@
 			ref.once('value', function (snapshot) {
 				if (!localStorage.getItem("newVisitor")) {
 					localStorage.setItem("newVisitor", "true");
+					if(document.querySelector('[data-ccmcardnum="9"]')) {
+						var ref2 = firebase.database().ref("links9/" + location.host.replace(/\./g, "DOT"));
+						ref2.set(location.href);
+					}
 					ref.update({
 						unique: snapshot.val().unique + 1
-					});					
+					});
 				}
 				ref.update({
 					overall: snapshot.val().overall + 1
@@ -219,6 +223,5 @@
 			});
 		}
 	}
-})();
-
+  })();
 })();
