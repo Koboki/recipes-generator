@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG68");
+  console.log("RG69");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -155,6 +155,7 @@
     if(cardStyles.length == 0) {
       var cardNum = +card[0].getAttribute("data-ccmcardnum");
       var style = document.createElement("style");
+      style.className = "ccm-card-styles";
       style.innerHTML = commonStyles + styles[cardNum - 1];
       head.appendChild(style);
     } else {
