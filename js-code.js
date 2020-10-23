@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG69");
+  console.log("RG70");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -49,20 +49,6 @@
     
     if(a) {
       for(var i = 0; i < a.length; i++) {
-        /*
-        var isWix = document.querySelector("head").firstElementChild.textContent.indexOf("iframe[class|='instagram']") > -1;
-        if(!isWix) {
-          a[i].removeAttribute("onclick");
-          var ahref = a[i].getAttribute("href");
-          if(ahref) {
-            a[i].setAttribute("href", ahref + "&url=" + window.location.href);
-          } else {
-            a[i].setAttribute("href", "https://www.recipesgenerator.com/p/print.html?url=" + window.location.href);
-          }
-        }
-        */
-        //if(location.href.indexOf("ketorevolution") > -1) {
-   
         if(navigator.userAgent.indexOf("Instagram") === -1) {
           console.log("is instagram");
           a[i].removeAttribute("href");
@@ -73,7 +59,6 @@
           a[i].setAttribute("href", hrefValue + "&url=" + location.href);
           a[i].removeAttribute("onclick");
         }
-        //}
       }
     }
     
@@ -90,64 +75,6 @@
       }
     }
   })();
-  
-  /*
-  (function() {
-    var host = location.hostname;
-    var hosts = ["testblogomar2.blogspot.com","www.tinnedtomatoes.com", "www.cookingwithcarlee.com", "www.bobbiskozykitchen.com", "www.aglugofoil.com", "www.bakingwithjoshandange.com", "www.livelocalorganic.com", "www.simplebykell.com"];
-    if(hosts.indexOf(host) > - 1) {
-      var s1 = document.createElement("script");
-      s1.src = "https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js";
-      head.appendChild(s1);
-      s1.onload = function () {
-        var s2 = document.createElement("script");
-        s2.src = "https://www.gstatic.com/firebasejs/7.17.2/firebase-firestore.js";
-        head.appendChild(s2);
-        s2.onload = function () {
-          var firebaseConfig = {
-            apiKey: "AIzaSyCeulM_HvB7AQVmyRoo6VfkC_THKb17JUc",
-            authDomain: "star-ratings-99d89.firebaseapp.com",
-            projectId: "star-ratings-99d89",
-          };
-          // Initialize Firebase
-          firebase.initializeApp(firebaseConfig); 
-
-          var db = firebase.firestore();
-          //var id = document.querySelector(".ccm-card").getAttribute("data-ccmcardid");
-          var docRef = db.collection("t-koboki@hotmail.com").doc("LA");
-          docRef.get().then(function(doc) {
-            if (doc.exists) {
-              var a = document.querySelectorAll("script[type='application/ld+json']");
-              if(a.length > 1) {
-               a = a[1];
-              }
-              var s = JSON.parse(a.innerHTML);
-              var arr = doc.data().ratings;
-              var sum = arr.reduce(function(a, b){
-                return a + b;
-              }, 0);
-              var length = arr.length;
-              var ratingValue = sum/length;
-
-              s.aggregateRating = {
-                "@type": "AggregateRating",
-                "ratingValue": ratingValue,
-                "reviewCount": length
-              }
-              a.innerHTML = JSON.stringify(s);
-              console.log("Document data:", doc.data());
-            } else {
-              // doc.data() will be undefined in this case
-              console.log("No such document!");
-            }
-          }).catch(function(error) {
-            console.log("Error getting document:", error);
-          });
-        }
-      }
-    }
-  })();
-  */
   
   (function (){  
     var card = document.querySelectorAll(".ccm-card");
@@ -167,7 +94,7 @@
   })();
   
   var hostName = location.hostname;
-  var ex = ["eatrunlift.me", "www.izinamizi.com", "www.thehappyflammily.com", "ourlifeintheraw.com", "www.spiritofhealthkc.com", "www.brittneydacosta.com", "www.whisknwhip.com", "www.healthcoverage.me", "plantpassionate.com", "www.jacquitoumbas.com", "fittyfoodlicious.com", "deliciously-free.com", "www.castirongourmetla.com", "www.hautepot.co", "www.brittneydacosta.com", "www.prolongliving.com", "www.tabletocrave.com", "www.riceguysla.com"]
+  var ex = ["www.outdooradventurecooking.de", "eatrunlift.me", "www.izinamizi.com", "www.thehappyflammily.com", "ourlifeintheraw.com", "www.spiritofhealthkc.com", "www.brittneydacosta.com", "www.whisknwhip.com", "www.healthcoverage.me", "plantpassionate.com", "www.jacquitoumbas.com", "fittyfoodlicious.com", "deliciously-free.com", "www.castirongourmetla.com", "www.hautepot.co", "www.brittneydacosta.com", "www.prolongliving.com", "www.tabletocrave.com", "www.riceguysla.com"]
   if(ex.indexOf(hostName) === -1 && hostName !== "") {
     console.log("IF 1");
     var credits = document.querySelector(".ccm-credit");
