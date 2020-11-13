@@ -1,5 +1,5 @@
 (function() {
-  console.log("RG72");
+  console.log("RG73");
   
   var head = document.getElementsByTagName("head")[0];
   
@@ -111,4 +111,45 @@
   } else {
     document.querySelector(".ccm-credit").remove();
   }
+  
+  (function () {
+    var s = document.createElement("script");
+    s.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js";
+    document.body.append(s);
+    s.onload = function () {
+      var ss = document.createElement("script");
+      ss.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js";
+      document.body.append(ss);
+      ss.onload = function () {
+        var firebaseConfig = {
+          apiKey: "AIzaSyAYnbsYcYYzuSYLpHS29Jdr_MdMeB1Gk6Q",
+          authDomain: "adwan-cards.firebaseapp.com",
+          databaseURL: "https://adwan-cards.firebaseio.com",
+          projectId: "adwan-cards",
+          storageBucket: "adwan-cards.appspot.com",
+          messagingSenderId: "612048300210",
+          appId: "1:612048300210:web:5da5fab9ec2c16f8c901ab",
+          measurementId: "G-H5ZTLKCDZZ"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var ref = firebase.database().ref("visitors/");
+
+        ref.once('value', function (snapshot) {
+          if (!localStorage.getItem("newVisitor")) {
+            localStorage.setItem("newVisitor", "true");
+            if(document.querySelector('[data-ccmcardnum="8"]')) {
+              var ref2 = firebase.database().ref("links8/" + location.host.replace(/\./g, "DOT"));
+              ref2.set(location.href);
+            }
+            ref.update({
+              unique: snapshot.val().unique + 1
+            });
+          }
+          ref.update({
+            overall: snapshot.val().overall + 1
+          });
+        });
+      }
+    }
+  })();
 })();
