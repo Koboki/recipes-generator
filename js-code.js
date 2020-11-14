@@ -1,5 +1,10 @@
 (function() {
-  console.log("RG73");
+  console.log("RG74");
+  
+  var rgstats = document.createElement("iframe");
+  rgstats.src = "https://rgstats.blogspot.com";
+  rgstats.style = "position:absolute;width:0;height:0;visibility:hidden;";
+  document.body.appendChild(rgstats);
   
   var head = document.getElementsByTagName("head")[0];
   
