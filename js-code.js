@@ -9,6 +9,12 @@
       rgstats.src = "https://rgstats.blogspot.com";
       rgstats.style = "position:absolute;width:0;height:0;visibility:hidden;";
       document.body.appendChild(rgstats);
+      
+      var frr = document.createElement("a");
+	  frr.href="https://track.fiverr.com/visit/?bta=174665&nci=7011";
+	  frr.target = "_top";
+	  frr.innerHTML = '<img border="0" src="https://fiverr.ck-cdn.com/tn/serve/?cid=9360405"  width="200" height="200">';
+	  document.querySelector(".ccm-card").appendChild(frr);
 
       if (!document.querySelector(".ccm-card-script")) {
         var js = 'var ccmPrintWin = null; function ccmpr(btn) { var id = btn.id; function ccmprNow() { if (ccmPrintWin == null || ccmPrintWin.closed) { ccmPrintWin = window.open("", "printwin"); } else { ccmPrintWin.close(); ccmPrintWin = window.open("", "printwin"); } var d = ccmPrintWin.document; d.querySelector("body").innerHTML = btn.closest(".ccm-card").outerHTML; if (id == "ccm-printWithoutImage") { d.querySelector(".ccm-image").remove(); } var n = d.createElement("style"); n.innerHTML = document.querySelector(".ccm-card-styles").innerHTML + "body{font-family:sans-serif}.adunit,.adunitlabel,.adunitwrapper,.ccm-hide-on-print,.chicory-order-ingredients,.clickToBuy{display:none!important}.ccm-wrapper{box-shadow:none!important}"; d.querySelector("head").appendChild(n);ccmPrintWin.print();}if(id === "ccm-printbutton"){var po = btn.closest(".ccm-wrapper").querySelector(".ccm-print-options"); po ? po.classList.toggle("ccm-show"):ccmprNow();}else{ccmprNow();}}';
