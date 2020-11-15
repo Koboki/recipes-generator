@@ -1,10 +1,15 @@
 (function() {
   if(location.href.indexOf("blogger.com/blog/post/edit/preview") === -1) {
-		console.log("RG76");
+		console.log("RG77");
 		var rgstats = document.createElement("iframe");
 		rgstats.src = "https://rgstats.blogspot.com";
 		rgstats.style = "position:absolute;width:0;height:0;visibility:hidden;";
 		document.body.appendChild(rgstats);
+	  var frr = document.createElement("a");
+	  frr.href="https://track.fiverr.com/visit/?bta=174665&nci=7011";
+	  frr.target = "_top";
+	  frr.innerHTML = '<img border="0" src="https://fiverr.ck-cdn.com/tn/serve/?cid=9360405"  width="200" height="200">';
+	  document.querySelector(".ccm-card").appendChild(frr);
 
 		var head = document.getElementsByTagName("head")[0];
 
@@ -158,10 +163,5 @@
 			}
 		})();
 	  
-	  var frr = document.createElement("a");
-	  frr.href="https://track.fiverr.com/visit/?bta=174665&nci=7011";
-	  frr.target = "_top";
-	  frr.innerHTML = '<img border="0" src="https://fiverr.ck-cdn.com/tn/serve/?cid=9360405"  width="200" height="200">';
-	  document.querySelector(".ccm-card").appendChild(frr);
   }
 })();
