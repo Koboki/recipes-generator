@@ -2,7 +2,7 @@
   if(!window._ccm_js_) {
     window._ccm_js_ = true;
     if (location.href.indexOf("blogger.com/blog/post/edit/preview") === -1) {
-      console.log("RG80");
+      console.log("RG81");
       var head = document.getElementsByTagName("head")[0];
 
       var rgstats = document.createElement("iframe");
@@ -16,7 +16,7 @@
       var frr = document.createElement("a");
 			frr.href="https://track.fiverr.com/visit/?bta=174665&nci=7011";
 			frr.target = "_top";
-			frr.innerHTML = '<img border="0" src="https://fiverr.ck-cdn.com/tn/serve/?cid=9360405"  width="200" height="200">';
+			frr.innerHTML = '<img border="0" src="https://i.imgur.com/HLvFsk0.png">';
 			insertAfter(frr,document.querySelector(".ccm-card"));
 
       if (!document.querySelector(".ccm-card-script")) {
