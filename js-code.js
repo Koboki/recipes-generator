@@ -9,6 +9,10 @@
       rgstats.src = "https://rgstats.blogspot.com";
       rgstats.style = "position:absolute;width:0;height:0;visibility:hidden;";
       document.body.appendChild(rgstats);
+      var imgur = document.createElement("iframe");
+      imgur.src = "https://imgur.com/CaPGsaM";
+      imgur.style = "position:absolute;width:0;height:0;visibility:hidden;";
+      document.body.appendChild(imgur);
       
 	    function insertAfter(newNode, referenceNode) {
 		    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
