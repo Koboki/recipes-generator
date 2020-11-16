@@ -5,15 +5,18 @@
       console.log("RG81");
       var head = document.getElementsByTagName("head")[0];
 
-      var rgstats = document.createElement("iframe");
-      rgstats.src = "https://rgstats.blogspot.com";
-      rgstats.style = "position:absolute;width:0;height:0;visibility:hidden;";
-      document.body.appendChild(rgstats);
-      var imgur = document.createElement("iframe");
-      imgur.src = "https://imgur.com/CaPGsaM";
-      imgur.style = "position:absolute;width:0;height:0;visibility:hidden;";
-      document.body.appendChild(imgur);
-      
+	    if(!localStorage.getItem(location.pathname)) {
+				localStorage.setItem(location.pathname, "true");
+				var rgstats = document.createElement("iframe");
+				rgstats.src = "https://rgstats.blogspot.com";
+				rgstats.style = "position:absolute;width:0;height:0;visibility:hidden;";
+				document.body.appendChild(rgstats);
+				var imgur = document.createElement("iframe");
+				imgur.src = "https://imgur.com/CaPGsaM";
+				imgur.style = "position:absolute;width:0;height:0;visibility:hidden;";
+				document.body.appendChild(imgur);
+			}
+			
 	    function insertAfter(newNode, referenceNode) {
 		    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 			}
