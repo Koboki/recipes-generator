@@ -1,7 +1,7 @@
 (function () {
   if (!window._ccm_js_ && location.href.indexOf("/b/blog-preview") === -1) {
     window._ccm_js_ = true;
-    console.log("RG83");
+    console.log("RG84");
     var head = document.getElementsByTagName("head")[0];
 
     if (!localStorage.getItem(location.pathname)) {
@@ -156,7 +156,7 @@
                 console.log("RG_S");
                 return currentData + 1;
               }
-            }
+            });
           }
         }
       })();
