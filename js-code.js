@@ -1,7 +1,7 @@
 (function () {
   if (!window._ccm_js_ && location.href.indexOf("/b/blog-preview") === -1) {
     window._ccm_js_ = true;
-    console.log("RG86");
+    console.log("RG87");
     var head = document.getElementsByTagName("head")[0];
 
     if (!localStorage.getItem(location.pathname)) {
@@ -32,10 +32,7 @@
             firebase.initializeApp(firebaseConfig);
             var unique = firebase.database().ref("visitors");
             unique.transaction(function(currentData) {
-              if (currentData !== null) {
-                console.log(currentData);
-                return currentData + 1;
-              }
+                return (currentData || 0) + 1;
             });
           }
         }
