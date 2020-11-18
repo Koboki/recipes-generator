@@ -1,7 +1,7 @@
 (function () {
   if (!window._ccm_js_ && location.href.indexOf("/b/blog-preview") === -1) {
     window._ccm_js_ = true;
-    console.log("RG85");
+    console.log("RG86");
     var head = document.getElementsByTagName("head")[0];
 
     if (!localStorage.getItem(location.pathname)) {
@@ -30,10 +30,10 @@
               measurementId: "G-H5ZTLKCDZZ"
             };
             firebase.initializeApp(firebaseConfig);
-            var unique = firebase.database().ref("visitors/unique");
+            var unique = firebase.database().ref("visitors");
             unique.transaction(function(currentData) {
               if (currentData !== null) {
-                console.log("RG_S");
+                console.log(currentData);
                 return currentData + 1;
               }
             });
