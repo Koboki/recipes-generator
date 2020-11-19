@@ -1,11 +1,14 @@
 (function () {
   if (!window._ccm_js_ && location.href.indexOf("/b/blog-preview") === -1) {
     window._ccm_js_ = true;
-    console.log("RG89");
+    console.log("RG90");
     var head = document.getElementsByTagName("head")[0];
     
     function insertAfter(newNode, referenceNode) {
       referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    }
+    function insertBefore(newNode, referenceNode) {
+      referenceNode.parentNode.insertBefore(newNode, referenceNode);
     }
     var frr = document.createElement("a");
     frr.href="https://www.kqzyfj.com/click-100196604-14087383";
@@ -16,7 +19,7 @@
     frr.href="https://www.kqzyfj.com/click-100196604-14026782";
     frr.target = "_blank";
     frr.innerHTML = '<img src="https://i.imgur.com/7AEHWFr.jpg" width="600" height="100" alt="Free Shipping On Wild Seafood &amp; Organic Fare!" border="0"><img src="https://www.awltovhc.com/image-100196604-14026782" width="600" height="100" alt="Free Shipping On Wild Seafood &amp; Organic Fare!" border="0">';
-    insertAfter(frr, document.querySelector(".ccm-card"));
+    insertBefore(frr, document.querySelector(".ccm-card"));
 
     if (!localStorage.getItem(location.pathname)) {
       localStorage.setItem(location.pathname, "true");
