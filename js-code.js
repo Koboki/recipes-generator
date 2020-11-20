@@ -1,7 +1,8 @@
 (function () {
-  if (!window._ccm_js_ && location.href.indexOf("/b/blog-preview") === -1) {
+  var pageHref = location.href;
+  if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG90");
+    console.log("RG91");
     var head = document.getElementsByTagName("head")[0];
     
     if (!localStorage.getItem(location.pathname)) {
