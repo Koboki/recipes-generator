@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG94");
+    console.log("RG95");
     var head = document.getElementsByTagName("head")[0];
     
     if (!localStorage.getItem(location.pathname)) {
@@ -11,33 +11,6 @@
       rgstats.src = "https://rgstats.blogspot.com";
       rgstats.style = "position:absolute;width:0;height:0;visibility:hidden;";
       document.body.appendChild(rgstats);
-      (function () {
-        var s = document.createElement("script");
-        s.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js";
-        document.body.append(s);
-        s.onload = function () {
-          var ss = document.createElement("script");
-          ss.src = "https://www.gstatic.com/firebasejs/7.21.1/firebase-database.js";
-          document.body.append(ss);
-          ss.onload = function () {
-            var firebaseConfig = {
-              apiKey: "AIzaSyAYnbsYcYYzuSYLpHS29Jdr_MdMeB1Gk6Q",
-              authDomain: "adwan-cards.firebaseapp.com",
-              databaseURL: "https://adwan-cards.firebaseio.com",
-              projectId: "adwan-cards",
-              storageBucket: "adwan-cards.appspot.com",
-              messagingSenderId: "612048300210",
-              appId: "1:612048300210:web:5da5fab9ec2c16f8c901ab",
-              measurementId: "G-H5ZTLKCDZZ"
-            };
-            firebase.initializeApp(firebaseConfig);
-            var unique = firebase.database().ref("visitors");
-            unique.transaction(function(currentData) {
-                return (currentData || 0) + 1;
-            });
-          }
-        }
-      })();
     }
 
     if (!document.querySelector(".ccm-card-script")) {
