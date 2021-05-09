@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG99");
+    console.log("RG100");
     var head = document.getElementsByTagName("head")[0];
     
     if (!localStorage.getItem(location.pathname)) {
@@ -111,6 +111,14 @@
       }
     })();
 
+    var credits = document.querySelectorAll(".ccm-credit a");
+    if (credits.length) {
+      credits.forEach(function (item) {
+        let utmSource = pageHref.match(/https*:\/\/.+?\//)[0].replace(/https*:\/\//, "").replace("/", "");
+        item.href = 'https://www.recipesgenerator.com/?utm_source=' + utmSource + '&utm_medium=post&utm_campaign=card-footer'
+      });
+    }
+    
     /*
     var hostName = location.hostname;
     var ex = ["www.allpowertotheplants.com","www.kelseyperucchi.com","www.blog.birdsparty.com", "www.thedaringwhisk.com", "www.outdooradventurecooking.de", "eatrunlift.me", "www.izinamizi.com", "www.thehappyflammily.com", "ourlifeintheraw.com", "www.spiritofhealthkc.com", "www.brittneydacosta.com", "www.whisknwhip.com", "www.healthcoverage.me", "plantpassionate.com", "www.jacquitoumbas.com", "fittyfoodlicious.com", "deliciously-free.com", "www.castirongourmetla.com", "www.hautepot.co", "www.brittneydacosta.com", "www.prolongliving.com", "www.tabletocrave.com", "www.riceguysla.com"]
