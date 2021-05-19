@@ -2,8 +2,27 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG100");
+    console.log("RG101");
     var head = document.getElementsByTagName("head")[0];
+    
+    var $generator = window.parent.document.querySelector('[name="generator"]');
+    if($generator) {
+      if($generator.content.indexOf("Wix") > -1) {
+        var $parentFrames = window.parent.document.querySelectorAll("iframe");
+        for(let i = 0; i < $parentFrames.length; i++) {
+          let $frame = $parentFrames[i];
+          try {
+            let card = $frame.contentDocument.body.querySelector(".ccm-card");
+            if(card) {
+              $frame.classList.add("ccm-frame-found");
+              $frame.parentElement.outerHTML = document.body.innerHTML;
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        }
+      }
+    }
     
     if (!localStorage.getItem(location.pathname)) {
       localStorage.setItem(location.pathname, "true");
