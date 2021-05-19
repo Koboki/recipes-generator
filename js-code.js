@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG101");
+    console.log("RG102");
     var head = document.getElementsByTagName("head")[0];
     
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -14,7 +14,9 @@
           try {
             let card = $frame.contentDocument.body.querySelector(".ccm-card");
             if(card) {
-              $frame.classList.add("ccm-frame-found");
+              var style = document.createElement("style");
+              style.innerHTML = "ul.ccm-section-items{list-style: disc;}ol.ccm-section-items{list-style: decimal;}";
+              document.body.appendChild(style);
               $frame.parentElement.outerHTML = document.body.innerHTML;
             }
           } catch (err) {
