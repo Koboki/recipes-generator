@@ -14,6 +14,8 @@
           try {
             let card = $frame.contentDocument.body.querySelector(".ccm-card");
             if(card) {
+              console.log("FRAME");
+              console.log($frame);
               let $frameArticle = $frame.closest(".post-content__body");
               var p = document.createElement("p"); // add <p> element just to get the font-family from it
               p.id = "ccm-node-to-get-font-family";
@@ -28,6 +30,9 @@
               let sss = document.createElement("script");
               sss.type = "text/javascript";
               sss.src = "https://cdn.adwantech.com/r-test.js";
+              
+              console.log("FRAME2");
+              console.log($frame);
               $frame.closest("body").appendChild(sss);
               $frame.closest("body").classList.add("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             }
