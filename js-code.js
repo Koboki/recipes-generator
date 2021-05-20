@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG102");
+    console.log("RG107");
     var head = document.getElementsByTagName("head")[0];
     
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -14,8 +14,15 @@
           try {
             let card = $frame.contentDocument.body.querySelector(".ccm-card");
             if(card) {
+              let $frameArticle = $frame.closest(".post-content__body");
+              var p = document.createElement("p"); // add <p> element just to get the font-family from it
+              p.id = "ccm-node-to-get-font-family";
+              p.className = "XzvDs";
+              $frameArticle.appendChild(p);
+              var fontFamily = getComputedStyle(p).fontFamily;
+              $frameArticle.querySelector("#ccm-node-to-get-font-family").remove();
               var style = document.createElement("style");
-              style.innerHTML = "ul.ccm-section-items{list-style: disc;}ol.ccm-section-items{list-style: decimal;}";
+              style.innerHTML = "ul.ccm-section-items{list-style: disc;}ol.ccm-section-items{list-style: decimal;}.ccm-wrapper{font-family:" + fontFamily + "}";
               document.body.appendChild(style);
               $frame.parentElement.outerHTML = document.body.innerHTML;
             }
