@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG116");
+    console.log("RG117");
     var head = document.getElementsByTagName("head")[0];
     
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -28,10 +28,16 @@
               document.body.appendChild(style);              
               console.log("FRAME2");
               console.log($frame);
-              let c = document.body.children;
+              let c = document.body.childNodes;
               for (let n = 0; n < c.length; n++) {
-                $frame.parentElement.appendChild(c[n]);                
+                console.log(n);
+                console.log(c[n]);
+                if(c[n].nodeType === 1) {
+                  $frame.parentElement.appendChild(c[n]);                
+                }
               }
+              $frame.parentElement.style = "";
+              $frame.remove();
               console.log("FRAME3");
               console.log($frame);
 
