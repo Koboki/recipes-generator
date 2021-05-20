@@ -2,9 +2,9 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG108");
+    console.log("RG109");
     var head = document.getElementsByTagName("head")[0];
-    /*
+    
     var $generator = window.parent.document.querySelector('[name="generator"]');
     if($generator) {
       if($generator.content.indexOf("Wix") > -1) {
@@ -32,7 +32,7 @@
         }
       }
     }
-    */
+    
     
     if (!localStorage.getItem(location.pathname)) {
       localStorage.setItem(location.pathname, "true");
