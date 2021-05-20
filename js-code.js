@@ -4,7 +4,7 @@
     window._ccm_js_ = true;
     console.log("RG117");
     var head = document.getElementsByTagName("head")[0];
-    
+    /*
     var $generator = window.parent.document.querySelector('[name="generator"]');
     if($generator) {
       if($generator.content.indexOf("Wix") > -1) {
@@ -39,15 +39,7 @@
               $frame.parentElement.style = "";
               $frame.remove();
               console.log("FRAME3");
-              console.log($frame);
-
-              /*
-              let sss = document.createElement("script");
-              sss.type = "text/javascript";
-              sss.src = "https://cdn.adwantech.com/r-test.js";
-              $frame.closest("body").appendChild(sss);
-              $frame.closest("body").classList.add("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-              */
+              console.log($frame);              
             }
           } catch (err) {
             console.log(err);
@@ -55,6 +47,7 @@
         }
       }
     }
+    */
     
     
     if (!localStorage.getItem(location.pathname)) {
