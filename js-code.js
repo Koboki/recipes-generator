@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG111");
+    console.log("RG113");
     var head = document.getElementsByTagName("head")[0];
     
     var $generator = window.parent.document.querySelector('[name="generator"]');
