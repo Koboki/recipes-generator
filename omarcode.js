@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG124");
+    console.log("RG125");
     var head = document.getElementsByTagName("head")[0];
     
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -33,6 +33,7 @@
                 let el = c[0];
                 if(el.nodeName === "SCRIPT") {
                   let s = document.createElement("script");
+                  s.className = el.className;
                   if(el.type) { s.type = el.type; }
                   if(el.src) {
                     s.src = el.src;
