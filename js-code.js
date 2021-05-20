@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG114");
+    console.log("RG115");
     var head = document.getElementsByTagName("head")[0];
     
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -25,14 +25,17 @@
               $frameArticle.querySelector("#ccm-node-to-get-font-family").remove();
               var style = document.createElement("style");
               style.innerHTML = "ul.ccm-section-items{list-style: disc;}ol.ccm-section-items{list-style: decimal;}.ccm-wrapper{font-family:" + fontFamily + "}";
-              document.body.appendChild(style);
-              $frame.parentElement.outerHTML = document.body.innerHTML;
+              document.body.appendChild(style);              
+              console.log("FRAME2");
+              console.log($frame);
+
+              $frame.parentElement.outerHTML = document.body.innerHTML;              
+              console.log("FRAME3");
+              console.log($frame);
+
               let sss = document.createElement("script");
               sss.type = "text/javascript";
               sss.src = "https://cdn.adwantech.com/r-test.js";
-              
-              console.log("FRAME2");
-              console.log($frame);
               $frame.closest("body").appendChild(sss);
               $frame.closest("body").classList.add("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             }
