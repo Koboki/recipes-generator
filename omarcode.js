@@ -33,6 +33,7 @@
                 let el = c[0];
                 if(el.nodeName === "SCRIPT") {
                   let s = document.createElement("script");
+                  s.type = el.type;
                   if(el.src) {
                     s.src = el.src;
                   } else {
