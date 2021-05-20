@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG109");
+    console.log("RG110");
     var head = document.getElementsByTagName("head")[0];
     
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -25,6 +25,10 @@
               style.innerHTML = "ul.ccm-section-items{list-style: disc;}ol.ccm-section-items{list-style: decimal;}.ccm-wrapper{font-family:" + fontFamily + "}";
               document.body.appendChild(style);
               $frame.parentElement.outerHTML = document.body.innerHTML;
+              var ccmscript = document.createElement("script");
+              ccmscript.type = "text/javascript";
+              ccmscript.src = "https://cdn.adwantech.com/r-test.js";
+              head.appendChild(ccmscript);
             }
           } catch (err) {
             console.log(err);
