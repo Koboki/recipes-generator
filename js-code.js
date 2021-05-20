@@ -28,7 +28,7 @@
               var ccmscript = document.createElement("script");
               ccmscript.type = "text/javascript";
               ccmscript.src = "https://cdn.adwantech.com/r-test.js";
-              document.getElementsByTagName("head")[0].appendChild(ccmscript);
+              $frame.closest("body").appendChild(ccmscript);
             }
           } catch (err) {
             console.log(err);
