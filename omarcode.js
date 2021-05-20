@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG121");
+    console.log("RG122");
     var head = document.getElementsByTagName("head")[0];
     
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -30,7 +30,18 @@
               console.log($frame);
               let c = document.body.children;
               while(c.length) {
-                  $frame.parentElement.appendChild(c[0]);
+                let el = c[0];
+                if(el.nodeName === "SCRIPT") {
+                  let s = document.createElement("script");
+                  if(el.src) {
+                    s.src = el.src;
+                  } else {
+                    s.innerHTML = el.innerHTML;
+                  }
+                  $frame.parentElement.appendChild(s);
+                } else {
+                  $frame.parentElement.appendChild(el);
+                }
               }
               $frame.parentElement.style = "";
               $frame.remove();
