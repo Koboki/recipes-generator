@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG117");
+    console.log("RG118");
     var head = document.getElementsByTagName("head")[0];
     /*
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -151,7 +151,7 @@
       } else {
         for (var i = 0; i < cardStyles.length; i++) {
           var s = cardStyles[i].innerHTML;
-          cardStyles[i].innerHTML = s.replace("<![CDATA[", "").replace("]]>", "");
+          cardStyles[i].innerHTML = s.replace("<![CDATA[", "").replace("]]>", "") + ".mv-ad-box{display: none !important;}";
         }
       }
     })();
