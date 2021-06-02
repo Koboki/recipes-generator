@@ -151,7 +151,7 @@
       } else {
         for (var i = 0; i < cardStyles.length; i++) {
           var s = cardStyles[i].innerHTML;
-          cardStyles[i].innerHTML = s.replace("<![CDATA[", "").replace("]]>", "") + ".mv-ad-box{display: none !important;}";
+          cardStyles[i].innerHTML = s.replace("<![CDATA[", "").replace("]]>", "");
         }
       }
     })();
