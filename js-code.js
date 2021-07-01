@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG118");
+    console.log("RG120");
     var head = document.getElementsByTagName("head")[0];
     /*
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -155,7 +155,13 @@
         }
       }
     })();
+    
+    var credits = document.querySelectorAll(".ccm-credit");
+    credits.forEach(function(item){
+      item.remove();
+    });
 
+    /*
     var credits = document.querySelectorAll(".ccm-credit a");
     if (credits.length) {
       credits.forEach(function (item) {
@@ -163,6 +169,7 @@
         item.href = 'https://www.recipesgenerator.com/?utm_source=' + utmSource + '&utm_medium=post&utm_campaign=card-footer'
       });
     }
+    */
     
     /*
     var hostName = location.hostname;
