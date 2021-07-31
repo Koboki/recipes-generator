@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG120");
+    console.log("RG121");
     var head = document.getElementsByTagName("head")[0];
     /*
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -59,7 +59,7 @@
     }
 
     if (!document.querySelector(".ccm-card-script")) {
-      var js = 'var ccmPrintWin = null; function ccmpr(btn) { var id = btn.id; function ccmprNow() { if (ccmPrintWin == null || ccmPrintWin.closed) { ccmPrintWin = window.open("", "printwin"); } else { ccmPrintWin.close(); ccmPrintWin = window.open("", "printwin"); } var d = ccmPrintWin.document; d.querySelector("body").innerHTML = btn.closest(".ccm-card").outerHTML; if (id == "ccm-printWithoutImage") { d.querySelector(".ccm-image").remove(); } var n = d.createElement("style"); n.innerHTML = document.querySelector(".ccm-card-styles").innerHTML + "body{font-family:sans-serif}.adunit,.adunitlabel,.adunitwrapper,.ccm-hide-on-print,.chicory-order-ingredients,.clickToBuy{display:none!important}.ccm-wrapper{box-shadow:none!important}"; d.querySelector("head").appendChild(n);ccmPrintWin.print();}if(id === "ccm-printbutton"){var po = btn.closest(".ccm-wrapper").querySelector(".ccm-print-options"); po ? po.classList.toggle("ccm-show"):ccmprNow();}else{ccmprNow();}}';
+      var js = `var ccmPrintWin = null;function ccmpr(btn) { var id = btn.id; function ccmprNow() { if (ccmPrintWin == null || ccmPrintWin.closed) { ccmPrintWin = window.open("", "printwin"); } else { ccmPrintWin.close(); ccmPrintWin = window.open("", "printwin"); } var d = ccmPrintWin.document; d.querySelector("body").innerHTML = btn.closest(".ccm-card").outerHTML + "<link rel='stylesheet' href='https://common.recipesgenerator.com/print.css'>"; if (id == "ccm-printWithoutImage") { d.querySelector(".ccm-image").remove(); } var n = d.createElement("style"); n.innerHTML = document.querySelector(".ccm-card-styles").innerHTML; d.querySelector("head").appendChild(n);ccmPrintWin.print();}if(id === "ccm-printbutton"){var po = btn.closest(".ccm-wrapper").querySelector(".ccm-print-options"); po ? po.classList.toggle("ccm-show"):ccmprNow();}else{ccmprNow();}}`;
       var ccmscript = document.createElement("script");
       ccmscript.type = "text/javascript";
       ccmscript.innerHTML = js;
