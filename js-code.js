@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG121");
+    console.log("RG122");
     var head = document.getElementsByTagName("head")[0];
     /*
     var $generator = window.parent.document.querySelector('[name="generator"]');
@@ -58,7 +58,7 @@
       document.body.appendChild(rgstats);
     }
 
-    if (!document.querySelector(".ccm-card-script")) {
+    if (!document.querySelector(".ccm-card-script") || !window.ccmpr) {
       var js = `var ccmPrintWin = null;function ccmpr(btn) { var id = btn.id; function ccmprNow() { if (ccmPrintWin == null || ccmPrintWin.closed) { ccmPrintWin = window.open("", "printwin"); } else { ccmPrintWin.close(); ccmPrintWin = window.open("", "printwin"); } var d = ccmPrintWin.document; d.querySelector("body").innerHTML = btn.closest(".ccm-card").outerHTML + "<link rel='stylesheet' href='https://common.recipesgenerator.com/print.css'>"; if (id == "ccm-printWithoutImage") { d.querySelector(".ccm-image").remove(); } var n = d.createElement("style"); n.innerHTML = document.querySelector(".ccm-card-styles").innerHTML; d.querySelector("head").appendChild(n);ccmPrintWin.print();}if(id === "ccm-printbutton"){var po = btn.closest(".ccm-wrapper").querySelector(".ccm-print-options"); po ? po.classList.toggle("ccm-show"):ccmprNow();}else{ccmprNow();}}`;
       var ccmscript = document.createElement("script");
       ccmscript.type = "text/javascript";
