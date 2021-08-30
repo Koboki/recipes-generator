@@ -2,8 +2,45 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG122");
+    console.log("RG130");
     var head = document.getElementsByTagName("head")[0];
+    try {
+      var $generator = window.parent.document.querySelector('[name="generator"]');
+      if ($generator && ($generator.content.indexOf("Wix") > -1)) {
+        document.body.style.overflow = "hidden";
+        let $allFrames = window.parent.document.querySelectorAll("iframe");
+        for (let i = 0; i < $allFrames.length; i++) {
+          let $frame = $allFrames[i];
+          try {
+            let card = $frame.contentDocument.body.querySelector(".ccm-card");
+            if (card) {
+              let $parent = $frame.closest("[style*='height']");
+              $parent.style = "";
+              let extraHeightValue = 120;
+              if(card.getAttribute('data-ccmcardnum') === "7") {
+               extraHeightValue = 400;
+              }
+              $frame.style.height = card.clientHeight + extraHeightValue + "px";
+              let maxHeightChecker = setInterval(function () {
+                if($parent.style.maxHeight) {
+                  $parent.style.maxHeight = "";
+                  clearInterval(maxHeightChecker);
+                }
+              }, 2000)
+              window.onload = function (event) {
+                $frame.style.height = card.clientHeight + 50 + "px";
+                $parent.style.maxHeight = "";
+              };
+            }
+          } catch (err) {
+            console.log(err);
+          }
+        }
+      }
+    } catch(err) {
+      console.log(err); 
+    }
+
     /*
     var $generator = window.parent.document.querySelector('[name="generator"]');
     if($generator) {
@@ -48,8 +85,8 @@
       }
     }
     */
-    
-    
+
+
     if (!localStorage.getItem(location.pathname)) {
       localStorage.setItem(location.pathname, "true");
       var rgstats = document.createElement("iframe");
@@ -58,7 +95,7 @@
       document.body.appendChild(rgstats);
     }
 
-    (function (){
+    (function () {
       var ccmscript = document.createElement("script");
       ccmscript.type = "text/javascript";
       ccmscript.innerHTML = `var ccmPrintWin = null;function ccmpr(btn) { var id = btn.id; function ccmprNow() { if (ccmPrintWin == null || ccmPrintWin.closed) { ccmPrintWin = window.open("", "printwin"); } else { ccmPrintWin.close(); ccmPrintWin = window.open("", "printwin"); } var d = ccmPrintWin.document; d.querySelector("body").innerHTML = btn.closest(".ccm-card").outerHTML + "<link rel='stylesheet' href='https://common.recipesgenerator.com/print.css'>"; if (id == "ccm-printWithoutImage") { d.querySelector(".ccm-image").remove(); } var n = d.createElement("style"); n.innerHTML = document.querySelector(".ccm-card-styles").innerHTML; d.querySelector("head").appendChild(n);ccmPrintWin.print();}if(id === "ccm-printbutton"){var po = btn.closest(".ccm-wrapper").querySelector(".ccm-print-options"); po ? po.classList.toggle("ccm-show"):ccmprNow();}else{ccmprNow();}}`;;
@@ -154,9 +191,9 @@
         }
       }
     })();
-    
+
     var credits = document.querySelectorAll(".ccm-credit");
-    credits.forEach(function(item){
+    credits.forEach(function (item) {
       item.remove();
     });
 
@@ -169,7 +206,7 @@
       });
     }
     */
-    
+
     /*
     var hostName = location.hostname;
     var ex = ["www.allpowertotheplants.com","www.kelseyperucchi.com","www.blog.birdsparty.com", "www.thedaringwhisk.com", "www.outdooradventurecooking.de", "eatrunlift.me", "www.izinamizi.com", "www.thehappyflammily.com", "ourlifeintheraw.com", "www.spiritofhealthkc.com", "www.brittneydacosta.com", "www.whisknwhip.com", "www.healthcoverage.me", "plantpassionate.com", "www.jacquitoumbas.com", "fittyfoodlicious.com", "deliciously-free.com", "www.castirongourmetla.com", "www.hautepot.co", "www.brittneydacosta.com", "www.prolongliving.com", "www.tabletocrave.com", "www.riceguysla.com"]
