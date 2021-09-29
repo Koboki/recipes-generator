@@ -146,9 +146,38 @@
       }
     })();
 
+    /*
     var credits = document.querySelectorAll(".ccm-credit");
     credits.forEach(function (item) {
       item.remove();
-    });
+    });*/
+    
+    var hostName = location.hostname;
+    var ex = ["www.allpowertotheplants.com","www.kelseyperucchi.com","www.blog.birdsparty.com", "www.thedaringwhisk.com", "www.outdooradventurecooking.de", "eatrunlift.me", "www.izinamizi.com", "www.thehappyflammily.com", "ourlifeintheraw.com", "www.spiritofhealthkc.com", "www.brittneydacosta.com", "www.whisknwhip.com", "www.healthcoverage.me", "plantpassionate.com", "www.jacquitoumbas.com", "fittyfoodlicious.com", "deliciously-free.com", "www.castirongourmetla.com", "www.hautepot.co", "www.brittneydacosta.com", "www.prolongliving.com", "www.tabletocrave.com", "www.riceguysla.com"]
+    if (hostName !== "" && ex.indexOf(hostName) === -1) {
+      console.log("IF 1");
+      let credits = document.querySelector(".ccm-credit");
+      if (credits) {
+        console.log("IF 2");
+        credits.innerHTML = 'Created using <a href="https://www.recipesgenerator.com" target="_blank">The Recipes Generator</a>';
+      } else {
+        credits = document.createElement("div");
+        credits.className = "ccm-credit ccm-hide-on-print";
+        credits.innerHTML = 'Created using <a href="https://www.recipesgenerator.com" target="_blank">The Recipes Generator</a>';
+        console.log("ELSE");
+        document.querySelector(".ccm-wrapper").appendChild(credits);
+      }
+    } else {
+      document.querySelector(".ccm-credit").remove();      
+    }
+    
+    var credits = document.querySelectorAll(".ccm-credit a");
+    if (credits.length) {
+      credits.forEach(function (item) {
+        let utmSource = pageHref.match(/https*:\/\/.+?\//)[0].replace(/https*:\/\//, "").replace("/", "");
+        item.href = 'https://www.recipesgenerator.com/?utm_source=' + utmSource + '&utm_medium=post&utm_campaign=card-footer'
+      });
+    }
+    
   }
 })();
