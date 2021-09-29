@@ -174,10 +174,9 @@
     var credits = document.querySelectorAll(".ccm-credit a");
     if (credits.length) {
       credits.forEach(function (item) {
-        let utmSource = pageHref.match(/https*:\/\/.+?\//)[0].replace(/https*:\/\//, "").replace("/", "");
+        let utmSource = pageHref.replace(/\?.+/, '');
         item.href = 'https://www.recipesgenerator.com/?utm_source=' + utmSource + '&utm_medium=post&utm_campaign=card-footer'
       });
     }
-    
   }
 })();
