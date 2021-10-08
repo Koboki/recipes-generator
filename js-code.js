@@ -146,12 +146,12 @@
       }
     })();
 
-    /*
+    
     var credits = document.querySelectorAll(".ccm-credit");
     credits.forEach(function (item) {
       item.remove();
-    });*/
-    
+    });
+    /*
     var hostName = location.hostname;
     var ex = ["www.allpowertotheplants.com","www.kelseyperucchi.com","www.blog.birdsparty.com", "www.thedaringwhisk.com", "www.outdooradventurecooking.de", "eatrunlift.me", "www.izinamizi.com", "www.thehappyflammily.com", "ourlifeintheraw.com", "www.spiritofhealthkc.com", "www.brittneydacosta.com", "www.whisknwhip.com", "www.healthcoverage.me", "plantpassionate.com", "www.jacquitoumbas.com", "fittyfoodlicious.com", "deliciously-free.com", "www.castirongourmetla.com", "www.hautepot.co", "www.brittneydacosta.com", "www.prolongliving.com", "www.tabletocrave.com", "www.riceguysla.com"]
     if (hostName !== "" && ex.indexOf(hostName) === -1) {
@@ -178,5 +178,6 @@
         item.href = 'https://www.recipesgenerator.com/?utm_source=' + utmSource + '&utm_medium=post&utm_campaign=card-footer'
       });
     }
+    */
   }
 })();
