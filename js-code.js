@@ -81,37 +81,30 @@
     var pinItScript = ';document.querySelector("#ccm-pinit").addEventListener("click", function (e) { this.href = this.href.replace("URLGoesHere", document.location.href); window.open(this.href, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600"); e.preventDefault(); });';
 
     (function () {
-      var aaa = document.querySelectorAll(".ccm-card button");
-
-      if (aaa.length > 0) {
-        for (var i = 0; i < aaa.length; i++) {
-          aaa[i].setAttribute("onclick", "ccmpr(this);");
-        }
+      var aaa = document.querySelectorAll("#ccm-printbutton");
+      for (var i = 0; i < aaa.length; i++) {
+        aaa[i].setAttribute("onclick", "ccmpr(this);");
       }
-
+      
       aaa = document.querySelectorAll(".ccm-printbutton");
 
-      if (aaa.length > 0) {
-        for (var i = 0; i < aaa.length; i++) {
-          aaa[i].setAttribute("onclick", "ccmpr(this);");
-        }
+      for (var i = 0; i < aaa.length; i++) {
+        aaa[i].setAttribute("onclick", "ccmpr(this);");
       }
 
       var a = document.querySelectorAll("a.ccm-printbutton");
       var exc = ["ketorevolution"];
 
-      if (a) {
-        for (var i = 0; i < a.length; i++) {
-          if (navigator.userAgent.indexOf("Instagram") === -1) {
-            console.log("is NOT instagram");
-            a[i].removeAttribute("href");
-            a[i].setAttribute("onclick", "ccmpr(this)");
-          } else {
-            console.log("is instagram");
-            var hrefValue = a[i].getAttribute("href");
-            a[i].setAttribute("href", hrefValue + "&url=" + location.href);
-            a[i].removeAttribute("onclick");
-          }
+      for (var i = 0; i < a.length; i++) {
+        if (navigator.userAgent.indexOf("Instagram") === -1) {
+          console.log("is NOT instagram");
+          a[i].removeAttribute("href");
+          a[i].setAttribute("onclick", "ccmpr(this)");
+        } else {
+          console.log("is instagram");
+          var hrefValue = a[i].getAttribute("href");
+          a[i].setAttribute("href", hrefValue + "&url=" + location.href);
+          a[i].removeAttribute("onclick");
         }
       }
 
