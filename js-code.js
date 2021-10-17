@@ -81,7 +81,7 @@
     var pinItScript = ';document.querySelector("#ccm-pinit").addEventListener("click", function (e) { this.href = this.href.replace("URLGoesHere", document.location.href); window.open(this.href, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600"); e.preventDefault(); });';
 
     (function () {
-      var aaa = document.querySelectorAll("#ccm-printbutton");
+      var aaa = document.querySelectorAll(".ccm-btns-wrapper button");
       for (var i = 0; i < aaa.length; i++) {
         aaa[i].setAttribute("onclick", "ccmpr(this);");
       }
