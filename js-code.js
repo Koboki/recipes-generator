@@ -128,7 +128,7 @@
 
     (function () {
       let headContent = head.innerHTML;
-      if(headContent.indexOf("squarespace") > -1 || headContent.indexOf("kajabi") > -1) {
+      if(headContent.indexOf("squarespace") > -1 || headContent.indexOf("kajabi") > -1 || headContent.indexOf("jimdo") > -1) {
         console.log("headContent true");
         var s = document.createElement("script");
         s.src = "https://common.recipesgenerator.com/styles-code.js";
