@@ -1,7 +1,7 @@
 (function () {
   var pageHref = location.href;
   if(pageHref.indexOf('aveganvisit.com') > -1) {
-    document.querySelectorAll(".ccm-card")forEach(function (a) {
+    document.querySelectorAll(".ccm-card").forEach(function (a) {
       let p = a.closest(".sqs-block-content");
       if(p) {
         p.remove();
