@@ -50,18 +50,7 @@
     } catch(err) {
       console.log(err); 
     }
-
-    try {
-      if (!localStorage.getItem(location.pathname)) {
-        localStorage.setItem(location.pathname, "true");
-        var rgstats = document.createElement("iframe");
-        rgstats.src = "https://rgstats.blogspot.com";
-        rgstats.style = "position:absolute;width:0;height:0;visibility:hidden;";
-        document.body.appendChild(rgstats);
-      }
-    } catch(err) {
-      console.log(err); 
-    }
+    
     (function () {
       var ccmscript = document.createElement("script");
       ccmscript.type = "text/javascript";
@@ -153,5 +142,17 @@
     credits.forEach(function (item) {
       item.remove();
     });
+    
+    try {
+      if (!localStorage.getItem(location.pathname)) {
+        localStorage.setItem(location.pathname, "true");
+        var rgstats = document.createElement("iframe");
+        rgstats.src = "https://rgstats.blogspot.com";
+        rgstats.style = "position:absolute;width:0;height:0;visibility:hidden;";
+        document.body.appendChild(rgstats);
+      }
+    } catch(err) {
+      console.log(err); 
+    }
   }
 })();
