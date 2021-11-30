@@ -1,15 +1,5 @@
 (function () {
   var pageHref = location.href;
-  if(pageHref.indexOf('aveganvisit.com') > -1) {
-    document.querySelectorAll(".ccm-card").forEach(function (a) {
-      let p = a.closest(".sqs-block-content");
-      if(p) {
-        p.remove();
-      } else {
-        a.remove();
-      }
-    });
-  }
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
     console.log("RG133");
