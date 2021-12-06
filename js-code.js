@@ -15,7 +15,6 @@
           .then(response => response.json())
           .then(data => {
             if (!JSON.parse(data).isActive) {
-              alert('d');
               $card.remove();
             }
           });
