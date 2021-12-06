@@ -2,7 +2,25 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG133");
+    console.log("RG134");
+    (function () {
+      const $card = document.querySelector('.ccm-card');
+      let id = $card.getAttribute('data-ccme');
+      const type = id ? 'e' : 'u';
+      if(!id) {
+        id = $card.getAttribute('data-ccmuid');
+      }
+      if (id) {
+        fetch(`https://us-central1-recipes-generator.cloudfunctions.net/isUserActive?id=${id}&type=${type}`)
+          .then(response => response.json())
+          .then(data => {
+            if (!JSON.parse(data).isActive) {
+              alert('d');
+              $card.remove();
+            }
+          });
+      }
+    })();
     var head = document.getElementsByTagName("head")[0];
     try {
       var $generator = window.parent.document.querySelector('[name="generator"]');
