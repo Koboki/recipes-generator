@@ -2,7 +2,7 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG134");
+    console.log("RG135");
     (function () {
       const $card = document.querySelector('.ccm-card');
       let id = $card.getAttribute('data-ccme');
@@ -11,7 +11,8 @@
         id = $card.getAttribute('data-ccmuid');
       }
       if (id) {
-        fetch(`https://us-central1-recipes-generator.cloudfunctions.net/isUserActive?id=${id}&type=${type}`)
+        let website = encodeURI(location.href.replace(/\?.*/, ''));
+        fetch(`https://us-central1-recipes-generator.cloudfunctions.net/isUserActive?id=${id}&type=${type}&url=${website}`)
           .then(response => response.json())
           .then(data => {
             if (!JSON.parse(data).isActive) {
