@@ -2,44 +2,8 @@
   var pageHref = location.href;
   if (!window._ccm_js_ && pageHref.indexOf("/b/blog-preview") === -1 && pageHref.indexOf("/config/") === -1 && pageHref.indexOf("/website/builder/") === -1) {
     window._ccm_js_ = true;
-    console.log("RG135");
+    console.log("RG136");
     var head = document.getElementsByTagName("head")[0];
-    try {
-      var $generator = window.parent.document.querySelector('[name="generator"]');
-      if ($generator && ($generator.content.indexOf("Wix") > -1)) {
-        document.body.style.overflow = "hidden";
-        let $allFrames = window.parent.document.querySelectorAll("iframe");
-        for (let i = 0; i < $allFrames.length; i++) {
-          let $frame = $allFrames[i];
-          try {
-            let card = $frame.contentDocument.body.querySelector(".ccm-card");
-            if (card) {
-              let $parent = $frame.closest("[style*='height']");
-              $parent.style = "";
-              let extraHeightValue = 120;
-              if(card.getAttribute('data-ccmcardnum') === "7") {
-               extraHeightValue = 400;
-              }
-              $frame.style.height = card.clientHeight + extraHeightValue + "px";
-              let maxHeightChecker = setInterval(function () {
-                if($parent.style.maxHeight) {
-                  $parent.style.maxHeight = "";
-                  clearInterval(maxHeightChecker);
-                }
-              }, 2000)
-              window.onload = function (event) {
-                $frame.style.height = card.clientHeight + 50 + "px";
-                $parent.style.maxHeight = "";
-              };
-            }
-          } catch (err) {
-            console.log(err);
-          }
-        }
-      }
-    } catch(err) {
-      console.log(err); 
-    }
     
     (function () {
       var ccmscript = document.createElement("script");
