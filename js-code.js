@@ -92,10 +92,23 @@
       }
     })();
 
-    var credits = document.querySelectorAll(".ccm-credit");
-    credits.forEach(function (item) {
-      item.remove();
-    });
+    (function () {
+      var hostName = location.hostname;
+      var ex = ["www.crumbcoatsandwine.com","www.delishinapinch.com","www.marydisomma.com","www.inspiredwithatwist.com","403db1a2-157b-4b6f-8cd6-feffe3723928.usrfiles.com","www.nutrilee.nl","www.vegoskafferiet.se","www.ourbigbeautifullife.com","fitnessgypsies.com","bitesandbokeh.com","ad9e006e-a5cc-4d50-801f-c176319cab02.usrfiles.com","www.yasmeenskitchendiary.com","www.allpowertotheplants.com","www.kelseyperucchi.com","www.blog.birdsparty.com", "eatrunlift.me", "www.spiritofhealthkc.com", "www.brittneydacosta.com", "www.whisknwhip.com", "www.healthcoverage.me", "plantpassionate.com", "www.jacquitoumbas.com", "fittyfoodlicious.com", "deliciously-free.com", "www.castirongourmetla.com", "www.hautepot.co", "www.brittneydacosta.com", "www.prolongliving.com", "www.tabletocrave.com", "www.riceguysla.com"]
+      var credits = document.querySelector(".ccm-credit");
+      if (hostName !== "" && ex.indexOf(hostName) === -1) {
+        if (credits) {
+          credits.innerHTML = 'Created using The Recipes Generator';
+        } else {
+          credits = document.createElement("div");
+          credits.className = "ccm-credit ccm-hide-on-print";
+          credits.innerHTML = 'Created using The Recipes Generator';
+          document.querySelector(".ccm-wrapper").appendChild(credits);
+        }
+      } else {
+        document.querySelector(".ccm-credit").remove();      
+      }
+    })();
     
     try {
       if (!localStorage.getItem(location.pathname)) {
