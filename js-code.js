@@ -4,11 +4,12 @@
     window._ccm_js_ = true;
     console.log("RG136");
     var head = document.getElementsByTagName("head")[0];
+    var $card = document.querySelector('.ccm-card');
     if (pageHref.indexOf('4e8285aa-d993-4706-940b-605552caaaa4.usrfiles.com') > -1) {
       document.body.innerHTML = ''; 
     }
     if (pageHref.indexOf('chenoadickerson.com') > -1) {
-      document.querySelector('.ccm-card').remove();
+      $card.remove();
     }
     (function () {
       var ccmscript = document.createElement("script");
@@ -93,6 +94,15 @@
         console.log("headContent true");
         var s = document.createElement("script");
         s.src = "https://common.recipesgenerator.com/styles-code.js";
+        head.appendChild(s);
+      }
+    })();
+
+    (function () {
+      if (pageHref.indexOf('ketorevolution') > -1) {
+        var s = document.createElement("link");
+        s.rel= 'stylesheet';
+        s.href = "https://cdn.recipesgenerator.com/PobZyCRItIX0Gl24SEmYwRXKcHD2/styles.css";
         head.appendChild(s);
       }
     })();
