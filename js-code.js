@@ -7,6 +7,9 @@
     if (pageHref.indexOf('4e8285aa-d993-4706-940b-605552caaaa4.usrfiles.com') > -1) {
       document.body.innerHTML = ''; 
     }
+    if (pageHref.indexOf('chenoadickerson.com') > -1) {
+      document.querySelector('.ccm-card').remove();
+    }
     (function () {
       var ccmscript = document.createElement("script");
       ccmscript.type = "text/javascript";
