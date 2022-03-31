@@ -4,7 +4,9 @@
     window._ccm_js_ = true;
     console.log("RG136");
     var head = document.getElementsByTagName("head")[0];
-    
+    if (pageHref.indexOf('4e8285aa-d993-4706-940b-605552caaaa4.usrfiles.com') > -1) {
+      document.body.innerHTML = ''; 
+    }
     (function () {
       var ccmscript = document.createElement("script");
       ccmscript.type = "text/javascript";
