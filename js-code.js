@@ -8,7 +8,7 @@
     if (pageHref.indexOf('4e8285aa-d993-4706-940b-605552caaaa4.usrfiles.com') > -1) {
       document.body.innerHTML = ''; 
     }
-    if (pageHref.indexOf('chenoadickerson.com') > -1 || pageHref.indexOf("lovefrenchfood.com") > -1) {
+    if (pageHref.indexOf('chenoadickerson.com') > -1) {
       $card.remove();
     }
     (function () {
