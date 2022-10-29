@@ -11,6 +11,11 @@
     if (pageHref.indexOf('chenoadickerson.com') > -1) {
       $card.remove();
     }
+    if (pageHref.indexOf('the-brook.co.uk') > -1) {
+      document.querySelectorAll(".ccm-card").forEach(function($c) {
+        $c.remove();
+      });
+    }
     (function () {
       var ccmscript = document.createElement("script");
       ccmscript.type = "text/javascript";
